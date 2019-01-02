@@ -64,6 +64,7 @@ namespace Estoque_CCA
             MessageBox.Show("Dados inseridos com sucesso!");
         }
 
+        //Botão fechar
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

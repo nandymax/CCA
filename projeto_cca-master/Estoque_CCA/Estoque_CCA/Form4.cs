@@ -68,7 +68,7 @@ namespace Estoque_CCA
             con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "insert into samplebox(dt_retorno) values( '" + dt_retornoDateTimePicker.Value + "') where caixa = '"+ caixaTextBox.Text+"'";
+            cmd.CommandText = "insert into samplebox (dt_retorno) values( '" + dt_retornoDateTimePicker.Value + "')";
             cmd.CommandText = "update samplebox set status =  '"+ statusTextBox.Text+ "' where caixa = '" + caixaTextBox.Text + "'";
             cmd.ExecuteNonQuery();
             con.Close();
@@ -77,7 +77,7 @@ namespace Estoque_CCA
         }
 
      
-
+        //Baixar os medicamentos utilizados
         private void button3_Click(object sender, EventArgs e)
         {
             con.Open();

@@ -37,6 +37,8 @@
             System.Windows.Forms.Label qntLabel;
             System.Windows.Forms.Label statusLabel;
             this.salaComboBox = new System.Windows.Forms.ComboBox();
+            this.sampleboxBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.database1DataSet = new Estoque_CCA.Database1DataSet();
             this.caixaTextBox = new System.Windows.Forms.TextBox();
             this.prontTextBox = new System.Windows.Forms.TextBox();
             this.dt_saidaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -45,8 +47,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.statusComboBox = new System.Windows.Forms.ComboBox();
             this.extraComboBox = new System.Windows.Forms.ComboBox();
-            this.sampleboxBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.database1DataSet = new Estoque_CCA.Database1DataSet();
             this.sampleboxTableAdapter = new Estoque_CCA.Database1DataSetTableAdapters.sampleboxTableAdapter();
             this.tableAdapterManager = new Estoque_CCA.Database1DataSetTableAdapters.TableAdapterManager();
             this.button2 = new System.Windows.Forms.Button();
@@ -57,10 +57,10 @@
             extraLabel = new System.Windows.Forms.Label();
             qntLabel = new System.Windows.Forms.Label();
             statusLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.qntNumericUpDown)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleboxBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qntNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // salaLabel
@@ -95,9 +95,9 @@
             dt_saidaLabel.AutoSize = true;
             dt_saidaLabel.Location = new System.Drawing.Point(24, 3);
             dt_saidaLabel.Name = "dt_saidaLabel";
-            dt_saidaLabel.Size = new System.Drawing.Size(47, 13);
+            dt_saidaLabel.Size = new System.Drawing.Size(57, 13);
             dt_saidaLabel.TabIndex = 9;
-            dt_saidaLabel.Text = "dt saida:";
+            dt_saidaLabel.Text = "Data Atual";
             // 
             // extraLabel
             // 
@@ -116,6 +116,15 @@
             qntLabel.Size = new System.Drawing.Size(25, 13);
             qntLabel.TabIndex = 15;
             qntLabel.Text = "qnt:";
+            // 
+            // statusLabel
+            // 
+            statusLabel.AutoSize = true;
+            statusLabel.Location = new System.Drawing.Point(372, 161);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new System.Drawing.Size(38, 13);
+            statusLabel.TabIndex = 18;
+            statusLabel.Text = "status:";
             // 
             // salaComboBox
             // 
@@ -144,6 +153,16 @@
             this.salaComboBox.Name = "salaComboBox";
             this.salaComboBox.Size = new System.Drawing.Size(127, 21);
             this.salaComboBox.TabIndex = 4;
+            // 
+            // sampleboxBindingSource
+            // 
+            this.sampleboxBindingSource.DataMember = "samplebox";
+            this.sampleboxBindingSource.DataSource = this.database1DataSet;
+            // 
+            // database1DataSet
+            // 
+            this.database1DataSet.DataSetName = "Database1DataSet";
+            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // caixaTextBox
             // 
@@ -198,15 +217,6 @@
             this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // statusLabel
-            // 
-            statusLabel.AutoSize = true;
-            statusLabel.Location = new System.Drawing.Point(372, 161);
-            statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(38, 13);
-            statusLabel.TabIndex = 18;
-            statusLabel.Text = "status:";
             // 
             // statusComboBox
             // 
@@ -265,16 +275,6 @@
             this.extraComboBox.Size = new System.Drawing.Size(206, 21);
             this.extraComboBox.TabIndex = 20;
             // 
-            // sampleboxBindingSource
-            // 
-            this.sampleboxBindingSource.DataMember = "samplebox";
-            this.sampleboxBindingSource.DataSource = this.database1DataSet;
-            // 
-            // database1DataSet
-            // 
-            this.database1DataSet.DataSetName = "Database1DataSet";
-            this.database1DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // sampleboxTableAdapter
             // 
             this.sampleboxTableAdapter.ClearBeforeFill = true;
@@ -321,10 +321,10 @@
             this.Name = "Saida";
             this.Text = "Saida";
             this.Load += new System.EventHandler(this.Saida_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.qntNumericUpDown)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sampleboxBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qntNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
